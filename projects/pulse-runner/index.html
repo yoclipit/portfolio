@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#08111f" />
+    <meta name="description" content="Pulse Runner is a three-level arcade maze game built with HTML, CSS, and JavaScript." />
+    <title>Pulse Runner — Arcade Maze Game</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="site-header">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true"><span></span></span>
+          <div>
+            <span class="brand-eyebrow">ORIGINAL BROWSER GAME</span>
+            <h1>PULSE<span>RUNNER</span></h1>
+          </div>
+        </div>
+        <div class="header-actions">
+          <button id="helpButton" class="text-button" type="button">How to play</button>
+          <button id="soundButton" class="text-button" type="button" aria-pressed="false">Sound off</button>
+        </div>
+      </header>
+
+      <main class="main-layout">
+        <aside class="side-panel" aria-label="Mission information">
+          <div class="panel-heading"><span class="eyebrow">MISSION STATUS</span><span class="tiny-spark" aria-hidden="true">✦</span></div>
+          <h2 id="levelName">First Contact</h2>
+          <p class="mission-copy">Collect every energy core, dodge the sentries and pulse lasers, then reach the exit portal.</p>
+
+          <div class="stat-grid">
+            <div class="stat-box"><span>LEVEL</span><strong id="levelNumber">01 / 03</strong></div>
+            <div class="stat-box"><span>CORES</span><strong><span id="coresFound">0</span> / <span id="coresTotal">4</span></strong></div>
+            <div class="stat-box"><span>HEARTS</span><strong id="healthValue" aria-label="3 hearts">♥ ♥ ♥</strong></div>
+            <div class="stat-box"><span>TIME</span><strong id="timerValue">75</strong></div>
+          </div>
+
+          <div class="resource-row"><span>DASH</span><strong id="dashValue">READY</strong></div>
+          <div class="resource-row"><span>LASERS</span><strong id="pulseValue">SAFE</strong></div>
+          <div class="score-card"><span>SCORE</span><strong id="scoreValue">0000</strong><small>BEST <span id="bestValue">0000</span></small></div>
+        </aside>
+
+        <section class="game-column" aria-label="Pulse Runner game">
+          <div class="stage-frame">
+            <div class="stage-topline"><span><i aria-hidden="true"></i> LIVE SIMULATION</span><span>GRID 20 × 12</span></div>
+            <div class="canvas-wrap">
+              <canvas id="gameCanvas" width="800" height="480" role="img" aria-label="Maze playfield. Use arrow keys or WASD to move, and Space to dash."></canvas>
+              <div id="overlay" class="overlay">
+                <div class="overlay-card">
+                  <span id="overlayKicker" class="eyebrow">MISSION 01 / 03</span>
+                  <h2 id="overlayTitle">ENTER THE GRID</h2>
+                  <p id="overlayBody">Collect every energy core and reach the exit. Dodge moving sentries and lasers. You have three hearts.</p>
+                  <button id="overlayButton" class="primary-button" type="button">Start game <span aria-hidden="true">→</span></button>
+                  <small id="overlayHint">Move with WASD or arrow keys · Space to dash · P to pause</small>
+                </div>
+              </div>
+              <div class="scanlines" aria-hidden="true"></div>
+            </div>
+            <div class="stage-bottomline"><span id="gameMessage">Collect the cores to unlock the portal.</span><button id="pauseButton" class="pause-button" type="button" disabled>Pause <span aria-hidden="true">Ⅱ</span></button></div>
+          </div>
+
+          <div class="controls-strip">
+            <div class="desktop-controls"><span class="keycap">W</span><span class="keycap">A</span><span class="keycap">S</span><span class="keycap">D</span><span>or arrow keys to move</span><span class="separator">/</span><span class="keycap wide">SPACE</span><span>to dash</span><span class="separator">/</span><span class="keycap">P</span><span>to pause</span></div>
+            <div class="legend"><span><i class="legend-dot core"></i> Core</span><span><i class="legend-dot guard"></i> Sentry</span><span><i class="legend-dot hazard"></i> Laser</span><span><i class="legend-dot portal"></i> Portal</span></div>
+          </div>
+
+          <div class="touch-controls" aria-label="Touch game controls">
+            <div class="direction-pad">
+              <button type="button" data-move="up" aria-label="Move up">▲</button>
+              <div><button type="button" data-move="left" aria-label="Move left">◀</button><button type="button" data-move="down" aria-label="Move down">▼</button><button type="button" data-move="right" aria-label="Move right">▶</button></div>
+            </div>
+            <button id="touchDash" class="dash-button" type="button">DASH</button>
+          </div>
+        </section>
+      </main>
+      <footer class="site-footer">BUILT WITH HTML + CSS + JAVASCRIPT <span>© 2026 PULSE RUNNER</span></footer>
+    </div>
+    <div id="announcer" class="sr-only" role="status" aria-live="polite"></div>
+  </body>
+</html>
