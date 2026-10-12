@@ -21,6 +21,6 @@ The included `.nojekyll` file is intentional. All local links are relative so th
 - `assets/ar-retail-demo.webm` is a web-sized version of the selected AR screen recording; `assets/ar-retail-poster.jpg` is a still from that recording.
 - The e-sports lab, HCI, and ACME pages summarize school documents. The original coursework PDFs are not included here.
 - The AI lab is described as a local prototype. Its server, dependencies, and `.env` are not part of this static site.
-- The résumé is copied unchanged from the supplied portfolio folder.
+- The résumé is a new one-page PDF with education, relevant experience, skills, and eight documented projects. The website links directly to this file.
 
 The private project assessment and suggested résumé bullets are in `../Portfolio_Project_Review.md` and should not be uploaded with the public site.
